@@ -77,7 +77,10 @@ impl BackendKind {
             BackendKind::Openrouter => openai::OPENROUTER_MODELS,
             BackendKind::Gemini => openai::GEMINI_MODELS,
             BackendKind::OpenaiCompatible => &[],
-            BackendKind::AgentCli => &["claude-code", "codex", "copilot", "gemini-cli", "opencode", "antigravity", "hermes", "maki"],
+            BackendKind::AgentCli => &[
+                "claude-code", "codex", "copilot", "gemini-cli", "opencode", "antigravity",
+                "hermes", "maki", "devin", "cline", "kilo", "kimi", "qwen-code", "goose",
+            ],
         }
     }
 

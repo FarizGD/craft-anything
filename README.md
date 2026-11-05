@@ -160,8 +160,9 @@ never sees or handles your account. Your use of it falls under your own agreemen
 Anthropic. See [docs/claude-code.md](docs/claude-code.md) for how and why. A Codex adapter
 exists but hasn't been verified on a real install yet. **GitHub Copilot** can use your installed
 Copilot CLI through ACP: sign in separately with `copilot login`. Other agents that speak ACP (Gemini CLI,
-Qwen Code, opencode, goose, Hermes, Maki) can be switched to it per backend; of those, only Maki has
-been run live. Anthropic, OpenAI, OpenRouter and local
+Qwen Code, OpenCode, Goose, Hermes, Maki, Devin CLI, Cline, Kilo Code and Kimi Code) can be
+switched to ACP per backend. See [docs/coding-agents.md](docs/coding-agents.md) for the supported
+agents, setup commands and current limitations. Anthropic, OpenAI, OpenRouter and local
 OpenAI-compatible servers are available for questions and analysis (Settings → AI).
 
 ## Built for agents
