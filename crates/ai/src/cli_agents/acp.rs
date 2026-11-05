@@ -31,6 +31,10 @@ pub const ACP_AGENTS: &[(&str, &[&str])] = &[
     ("hermes", &["acp"]),
     ("maki", &["acp"]),
     ("copilot", &["--acp", "--stdio"]),
+    ("devin", &["acp"]),
+    ("cline", &["--acp"]),
+    ("kilo", &["acp"]),
+    ("kimi", &["acp"]),
 ];
 
 /// Agents whose ACP mode takes the backend's model (`cli_model`), and the flag after the ACP
@@ -1161,6 +1165,18 @@ printf '{"jsonrpc":"2.0","id":%s,"result":{"stopReason":"end_turn"}}\n' "$prompt
         assert_eq!(run("read", json!({"path": "/a"})).0, "Read");
         assert_eq!(run("fetch", json!({"url": "https://x"})).0, "WebFetch");
         assert_eq!(run("other", json!({})).0, "t", "unknown kinds are asked about by title");
+    }
+
+    #[test]
+    fn popular_coding_agents_have_verified_acp_entrypoints() {
+        assert_eq!(acp_args("devin"), Some(&["acp"][..]));
+        assert_eq!(acp_args("opencode"), Some(&["acp"][..]));
+        assert_eq!(acp_args("cline"), Some(&["--acp"][..]));
+        assert_eq!(acp_args("kilo"), Some(&["acp"][..]));
+        assert_eq!(acp_args("kimi"), Some(&["acp"][..]));
+        assert_eq!(acp_args("gemini-cli"), Some(&["--experimental-acp"][..]));
+        assert_eq!(acp_args("qwen-code"), Some(&["--experimental-acp"][..]));
+        assert_eq!(acp_args("goose"), Some(&["acp"][..]));
     }
 
     #[test]
