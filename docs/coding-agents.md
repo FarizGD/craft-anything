@@ -19,7 +19,7 @@ server for the current project. Sign in with the agent itself before starting a 
 | Hermes Agent | `hermes` | `acp` | Existing integration |
 | GitHub Copilot CLI | `copilot` | `--acp --stdio` | Existing integration |
 | Maki | `maki` | `acp` | Existing integration |
-| Antigravity | `agy` | ACP adapter | Existing integration |
+| Antigravity | `agy` | Native adapter | Existing integration |
 
 The program must be installed and available on `PATH`. If it is installed elsewhere, select its
 executable in **Settings → AI**. For remote backends, install and authenticate the agent on the
